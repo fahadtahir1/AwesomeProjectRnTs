@@ -22,11 +22,17 @@ const App = () => {
 
 const styles = StyleSheet.create({
   appContainer: {
-    padding: 20,
+    paddingTop: 50,
+    paddingHorizontal: 8,
   },
   inputContainer:{
     flexDirection: 'row',
-    marginRight: 10,
+    width: '100%',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingBottom: 20,
+    borderBottomColor: '#cccccc',
+    borderBottomWidth: 1,
   },
   textInput: {
     borderColor: '#cccccc',
