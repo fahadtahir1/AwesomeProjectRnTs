@@ -12,7 +12,7 @@ const App = () => {
       <View
         style={{
           backgroundColor: 'red',
-      
+          flex: 1,
           justifyContent: 'center',
           alignItems: 'center'
         }}>
@@ -21,7 +21,7 @@ const App = () => {
       <View
         style={{
           backgroundColor: 'blue',
-  
+          flex: 1,
           justifyContent: 'center',
           alignItems: 'center'
         }}>
@@ -30,7 +30,7 @@ const App = () => {
       <View
         style={{
           backgroundColor: 'green',
-      
+          flex: 1,
           justifyContent: 'center',
           alignItems: 'center'
         }}>
@@ -46,8 +46,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     width: '80%',
     height: 300,
-    justifyContent: 'space-around',
-    alignItems: 'center',
+    justifyContent: 'space-between',
+    alignItems: 'stretch',
   },
 });
 
