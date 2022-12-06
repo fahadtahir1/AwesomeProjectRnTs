@@ -12,8 +12,6 @@ const App = () => {
       <View
         style={{
           backgroundColor: 'red',
-          width: 100,
-          height: 100,
           justifyContent: 'center',
           alignItems: 'center'
         }}>
@@ -22,8 +20,6 @@ const App = () => {
       <View
         style={{
           backgroundColor: 'blue',
-          width: 100,
-          height: 100,
           justifyContent: 'center',
           alignItems: 'center'
         }}>
@@ -32,8 +28,6 @@ const App = () => {
       <View
         style={{
           backgroundColor: 'green',
-          width: 100,
-          height: 100,
           justifyContent: 'center',
           alignItems: 'center'
         }}>
