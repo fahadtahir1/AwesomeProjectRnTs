@@ -13,7 +13,7 @@ const App = () => {
       <TextInput style={styles.textInput} placeholder='Enter course goal'/>
       <Button title='Add Goal'/>
      </View>
-     <View>
+     <View style={styles.goalsContainer}>
       <Text>List of Goals</Text>
      </View>
     </View>
@@ -22,15 +22,17 @@ const App = () => {
 
 const styles = StyleSheet.create({
   appContainer: {
+    flex: 1,
     paddingTop: 50,
     paddingHorizontal: 8,
   },
   inputContainer:{
     flexDirection: 'row',
+    flex: 1,
     width: '100%',
     justifyContent: 'space-between',
     alignItems: 'center',
-    paddingBottom: 20,
+    marginBottom: 10,
     borderBottomColor: '#cccccc',
     borderBottomWidth: 1,
   },
@@ -38,6 +40,9 @@ const styles = StyleSheet.create({
     borderColor: '#cccccc',
     borderWidth: 1,
     width: '70%',
+  },
+  goalsContainer:{
+    flex: 7,
   },
 });
 
