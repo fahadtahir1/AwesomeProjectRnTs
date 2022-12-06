@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
     padding: 50,
   },
   inputContainer: {
-    flexDirection: 'row',
+    flexDirection: 'column',
   },
 });
 
