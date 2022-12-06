@@ -45,7 +45,8 @@ const App = () => {
 
 const styles = StyleSheet.create({
   appContainer: {
-    padding: 20
+    padding: 20,
+    flexDirection: 'row',
   },
 });
 
