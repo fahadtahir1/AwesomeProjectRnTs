@@ -8,8 +8,8 @@ import {
 const App = () => {
 
   return (
-   <View>
-    <View>
+   <View style={styles.appContainer}>
+    <View style={styles.inputContainer}>
       <TextInput placeholder='Your course goal'/>
       <Button title='Add Goal'/>
     </View>
