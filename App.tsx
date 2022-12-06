@@ -12,6 +12,7 @@ const App = () => {
       <View
         style={{
           backgroundColor: 'red',
+      
           justifyContent: 'center',
           alignItems: 'center'
         }}>
@@ -20,6 +21,7 @@ const App = () => {
       <View
         style={{
           backgroundColor: 'blue',
+  
           justifyContent: 'center',
           alignItems: 'center'
         }}>
@@ -28,6 +30,7 @@ const App = () => {
       <View
         style={{
           backgroundColor: 'green',
+      
           justifyContent: 'center',
           alignItems: 'center'
         }}>
@@ -41,6 +44,8 @@ const styles = StyleSheet.create({
   appContainer: {
     padding: 20,
     flexDirection: 'row',
+    width: '80%',
+    height: 300,
   },
 });
 
