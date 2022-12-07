@@ -7,14 +7,17 @@ import {
 
 
 const App = () => {
-  const[enteredGoalText, setEnteredGoalText] = useState('');
-  
+  const [enteredGoalText, setEnteredGoalText] = useState('');
+  const [courseGoals, setcourseGoals] = useState([]);
+
   function goalInputHandler(enteredText) {
     setEnteredGoalText(enteredText)
   };
 
   function addGoalHandler() {
-    console.log(enteredGoalText);
+    // console.log(enteredGoalText);
+    setcourseGoals((currentCourseGoals) =>
+      [...currentCourseGoals, enteredGoalText]);
   };
 
   return (
@@ -24,10 +27,16 @@ const App = () => {
           style={styles.textInput}
           placeholder='Enter course goal'
         />
-        <Button title='Add Goal' onPress={addGoalHandler}/>
+        <Button title='Add Goal' onPress={addGoalHandler} />
       </View>
       <View style={styles.goalsContainer}>
-        <Text>List of Goals</Text>
+        {courseGoals.map((goal) =>
+          <View  style={styles.goalItem} key={goal}>
+            <Text style={styles.goaltext}>
+              {goal}
+            </Text>
+          </View>
+        )}
       </View>
     </View>
   );
@@ -56,6 +65,15 @@ const styles = StyleSheet.create({
   },
   goalsContainer: {
     flex: 7,
+  },
+  goalItem: {
+    borderRadius: 6,
+    padding: 8,
+    margin: 8,
+    backgroundColor: '#5e0acc'
+  },
+  goaltext: {
+    color: 'white',
   },
 });
 
