@@ -2,7 +2,7 @@ import { useState } from 'react';
 import {
   Button,
   ScrollView,
-  StyleSheet, Text, TextInput, View,
+  StyleSheet, Text, TextInput, View, FlatList
 } from 'react-native';
 
 
@@ -18,7 +18,8 @@ const App = () => {
   function addGoalHandler() {
     // console.log(enteredGoalText);
     setcourseGoals((currentCourseGoals) =>
-      [...currentCourseGoals, enteredGoalText]);
+      [...currentCourseGoals, { text: enteredGoalText, id: Math.random() }
+      ]);
   };
 
   return (
@@ -31,15 +32,20 @@ const App = () => {
         <Button title='Add Goal' onPress={addGoalHandler} />
       </View>
       <View style={styles.goalsContainer}>
-        <ScrollView>
-          {courseGoals.map((goal) =>
-            <View style={styles.goalItem} key={goal}>
-              <Text style={styles.goaltext}>
-                {goal}
-              </Text>
-            </View>
-          )}
-        </ScrollView>
+        <FlatList
+          data={courseGoals}
+          renderItem={(itemData) => {
+            return (
+              <View style={styles.goalItem} key={itemData.index}>
+                <Text style={styles.goaltext}>
+                  {itemData.item.text}
+                </Text>
+              </View>
+            );
+          }}
+          keyExtractor={(item, index) => {return item.key}}
+          alwaysBounceVertical={false}
+         />
       </View>
     </View>
   );
