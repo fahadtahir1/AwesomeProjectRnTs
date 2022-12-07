@@ -1,5 +1,4 @@
-
-import React, { type PropsWithChildren } from 'react';
+import { useState } from 'react';
 import {
   Button,
   StyleSheet, Text, TextInput, View,
@@ -8,23 +7,28 @@ import {
 
 
 const App = () => {
-  function goalInputHandler(enteredText: String){
-    console.log(enteredText)
+  const[enteredGoalText, setEnteredGoalText] = useState('');
+  
+  function goalInputHandler(enteredText) {
+    setEnteredGoalText(enteredText)
   };
 
-  function addGoalHandler(){
-
+  function addGoalHandler() {
+    console.log(enteredGoalText);
   };
 
   return (
     <View style={styles.appContainer}>
-     <View style={styles.inputContainer}>
-      <TextInput onChangeText={goalInputHandler} style={styles.textInput} placeholder='Enter course goal'/>
-      <Button title='Add Goal'/>
-     </View>
-     <View style={styles.goalsContainer}>
-      <Text>List of Goals</Text>
-     </View>
+      <View style={styles.inputContainer}>
+        <TextInput onChangeText={goalInputHandler}
+          style={styles.textInput}
+          placeholder='Enter course goal'
+        />
+        <Button title='Add Goal' onPress={addGoalHandler}/>
+      </View>
+      <View style={styles.goalsContainer}>
+        <Text>List of Goals</Text>
+      </View>
     </View>
   );
 };
@@ -35,7 +39,7 @@ const styles = StyleSheet.create({
     paddingTop: 50,
     paddingHorizontal: 8,
   },
-  inputContainer:{
+  inputContainer: {
     flexDirection: 'row',
     flex: 1,
     width: '100%',
@@ -50,7 +54,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     width: '70%',
   },
-  goalsContainer:{
+  goalsContainer: {
     flex: 7,
   },
 });
